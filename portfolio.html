@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfólio Pessoal</title>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&family=Playfair+Display:wght@500&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Quicksand', sans-serif;
+    }
+
+    body {
+      background-color: #fdf6f0;
+      color: #3e2f1c;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+      background: linear-gradient(90deg, #e8d4b0, #f0e6d2);
+      padding: 1.5rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    }
+
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      color: #5e4633;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #3e2f1c;
+      font-weight: 600;
+      font-size: 1.05rem;
+      transition: all 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #a47148;
+    }
+
+    main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem 0;
+      width: 100%;
+    }
+
+    .secao-perfil {
+      width: 100%;
+      text-align: center;
+      padding: 3rem 2rem;
+      margin-bottom: 2rem;
+      background-color: #e8d4b0;
+    }
+
+    .secao-perfil img {
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 1.5rem;
+      border: 3px solid #a47148;
+    }
+
+    .secao-perfil h2 {
+      font-size: 2.2rem;
+      margin-bottom: 0.5rem;
+      color: #5e4633;
+      font-family: 'Playfair Display', serif;
+    }
+
+    .secao-perfil p {
+      font-size: 1.2rem;
+      line-height: 1.6;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    section {
+      background-color: #fffaf5;
+      border-radius: 16px;
+      padding: 2rem;
+      margin: 1rem 0;
+      width: 100%;
+      max-width: 900px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    }
+
+    section h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      color: #5e4633;
+    }
+
+    .skill-item {
+      border-left: 3px solid #c78b4f;
+      padding-left: 1rem;
+      margin-bottom: 1rem;
+      position: relative;
+    }
+
+    footer {
+      background-color: #e8d4b0;
+      padding: 1rem;
+      text-align: center;
+      font-size: 0.9rem;
+    }
+
+    .container-habilidades, .container-interesses {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+    }
+
+    .skill-box {
+      background-color: #e8d4b0;
+      padding: 1.5rem;
+      margin: 1rem;
+      border-radius: 10px;
+      width: 220px;
+      text-align: center;
+      box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .skill-box i {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      color: #5e4633;
+    }
+
+    .interesse-box {
+      background-color: #e8d4b0;
+      padding: 1rem;
+      margin: 0.5rem;
+      border-radius: 10px;
+      width: 180px;
+      min-height: 120px;
+      text-align: center;
+      box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .interesse-box h4 {
+      font-size: 1.1rem;
+      color: #5e4633;
+      margin: 0;
+      padding: 0.5rem;
+      line-height: 1.4;
+      word-break: break-word;
+    }
+
+    .skill-box h4 {
+      font-size: 1.2rem;
+      color: #5e4633;
+    }
+
+    .item-projeto {
+      margin-bottom: 2rem;
+    }
+
+    .item-projeto h4 {
+      font-size: 1.5rem;
+      color: #5e4633;
+    }
+
+    .item-projeto p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
+    .item-projeto a {
+      color: #a47148;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s;
+    }
+
+    .item-projeto a:hover {
+      color: #5e4633;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Meu Portfólio</h1>
+    <nav>
+      <ul>
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#softskills">Soft Skills</a></li>
+        <li><a href="#habilidades">Habilidades</a></li>
+        <li><a href="#interesses">Interesses</a></li>
+        <li><a href="#projetos">Projetos</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="secao-perfil" id="sobre">
+      <img src="HAN_8208_2.jpg" alt="Minha Foto">
+      <h2>Gislayne Ellen Soares</h2>
+      <p>Olá! Sou formada em eletrotécnica e estudante de Tecnologia da Informação entusiasta em cibersegurança. Estou sempre em busca de novos aprendizados e desafios.</p>
+    </section>
+
+    <section id="softskills">
+      <h3>🧠 Soft Skills</h3>
+      <div class="skill-item">Comunicação Clara</div>
+      <div class="skill-item">Trabalho em Equipe</div>
+      <div class="skill-item">Raciocínio Lógico</div>
+      <div class="skill-item">Adaptabilidade</div>
+      <div class="skill-item">Gestão de Tempo</div>
+    </section>
+
+    <section id="habilidades">
+      <h3>💻 Habilidades Técnicas</h3>
+      <div class="container-habilidades">
+        <div class="skill-box">
+          <i class="fab fa-html5"></i>
+          <h4>HTML & CSS</h4>
+        </div>
+        <div class="skill-box">
+          <i class="fab fa-css3-alt"></i>
+          <h4>C/C++</h4>
+        </div>
+        <div class="skill-box">
+          <i class="fab fa-git"></i>
+          <h4>Git & GitHub</h4>
+        </div>
+        <div class="skill-box">
+          <i class="fab fa-java"></i>
+          <h4>Java</h4>
+        </div>
+        <div class="skill-box">
+          <i class="fas fa-database"></i>
+          <h4>MySQL</h4>
+        </div>
+        <div class="skill-box">
+          <i class="fab fa-sitemap"></i>
+          <h4>Scrum</h4>
+        </div>
+      </div>
+    </section>
+
+    <section id="interesses">
+      <h3>🎯 Interesses</h3>
+      <div class="container-interesses">
+        <div class="interesse-box">
+          <h4>🔒<br>Segurança da Informação</h4>
+        </div>
+        <div class="interesse-box">
+          <h4>🌐<br>Redes e Infraestrutura</h4>
+        </div>
+        <div class="interesse-box">
+          <h4>💻<br>Desenvolvimento Web</h4>
+        </div>
+      </div>
+    </section>
+
+    <section id="projetos">
+      <h3>💼 Projetos</h3>
+
+      <div class="item-projeto">
+        <h4>Codificação e Decodificação de Mensagens</h4>
+        <p>Este projeto foi desenvolvido em C para demonstrar o processo de codificação e decodificação de mensagens utilizando técnicas de criptografia simples. Ele foi criado como parte da disciplina de Estruturas de Dados.</p>
+        <a href="https://github.com/gislaynellen/codificacao-decodificacao" target="_blank">Ver Projeto no GitHub</a>
+      </div>
+
+      <div class="item-projeto">
+        <h4>Sistema Controlador de Viagem</h4>
+        <p>Desenvolvido em C++, este projeto permite o cadastro e controle de viagens, cidades, trajetos, transportes e passageiros. Foi criado para fixar aprendizado sobre Programação Orientada a Objetos (POO), persistência de dados e modularização, com foco em escalabilidade e manutenção do código.</p>
+        <a href="https://github.com/gislaynellen/sistema-controlador-de-viagem" target="_blank">Ver Projeto no GitHub</a>
+      </div>
+    </section>
+
+    <section id="contato">
+      <h3>📬 Contato</h3>
+      <p>Email: gislaynel@gmail.com</p>
+      <p>GitHub: github.com/gislaynellen</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Gislayne Ellen. Todos os direitos reservados.</p>
+  </footer>
+
+</body>
+
+</html>
