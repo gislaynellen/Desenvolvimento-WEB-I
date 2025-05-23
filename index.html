@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDoList</title>
+    <link href="https://fonts.googleapis.com/css2?family=Short+Stack&family=Comic+Neue:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-heart"></i> ToDoList <i class="fas fa-heart"></i></h1>
+            <div class="header-decoration">
+                <div class="star"><i class="fas fa-star"></i></div>
+                <div class="cloud"><i class="fas fa-cloud"></i></div>
+                <div class="flower"><i class="fas fa-spa"></i></div>
+            </div>
+        </header>
+
+        <main>
+            <section class="task-form">
+                <h2><i class="fas fa-plus-circle"></i> Adicionar Tarefa</h2>
+                <form id="taskForm">
+                    <div class="form-group">
+                        <label for="title"><i class="fas fa-heading"></i> Título:</label>
+                        <input type="text" id="title" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="taskDate"><i class="fas fa-calendar-day"></i> Data da Tarefa:</label>
+                        <input type="date" id="taskDate" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="comment"><i class="fas fa-comment-dots"></i> Comentário:</label>
+                        <textarea id="comment" rows="3"></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label><i class="fas fa-exclamation-circle"></i> Prioridade:</label>
+                        <div class="radio-group">
+                            <label class="priority-label high">
+                                <input type="radio" name="priority" value="ALTA" required> ALTA
+                            </label>
+                            <label class="priority-label medium">
+                                <input type="radio" name="priority" value="MÉDIA"> MÉDIA
+                            </label>
+                            <label class="priority-label low">
+                                <input type="radio" name="priority" value="BAIXA"> BAIXA
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label><i class="fas fa-bell"></i> Notificação:</label>
+                        <div class="radio-group">
+                            <label class="notification-label yes">
+                                <input type="radio" name="notification" value="SIM" required> SIM
+                            </label>
+                            <label class="notification-label no">
+                                <input type="radio" name="notification" value="NÃO"> NÃO
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-buttons">
+                        <button type="submit" class="btn add-btn"><i class="fas fa-plus"></i> Adicionar Tarefa</button>
+                        <button type="button" id="cancelBtn" class="btn cancel-btn"><i class="fas fa-times"></i> Cancelar</button>
+                    </div>
+                    <input type="hidden" id="taskId">
+                </form>
+            </section>
+
+            <section class="task-list">
+                <div class="list-header">
+                    <h2><i class="fas fa-tasks"></i> Minhas Tarefas</h2>
+                    <div class="filter-group">
+                        <label for="filter"><i class="fas fa-filter"></i> Filtrar por:</label>
+                        <select id="filter">
+                            <option value="creationDate">Data de criação</option>
+                            <option value="taskDate">Data da tarefa</option>
+                            <option value="priority">Prioridade</option>
+                            <option value="title">Ordem alfabética</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div id="tasksContainer">
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <div class="decoration-elements">
+        <div class="heart"><i class="fas fa-heart"></i></div>
+        <div class="star"><i class="fas fa-star"></i></div>
+        <div class="flower"><i class="fas fa-spa"></i></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
